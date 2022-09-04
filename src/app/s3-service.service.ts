@@ -28,7 +28,7 @@ async uploadFile(file: File) {
   const contentType = file.type;
 
   const params = {
-    Bucket: 'lcprtest',
+    Bucket: 'reportunlock',
     Key: file.name,
     Body: file,
     //ACL: 'public-read',
@@ -49,7 +49,7 @@ async uploadFileWithPreSignedURL(file: File) {
   const contentType = file.type;
 
   const params = {
-    Bucket: 'lcprtest',
+    Bucket: 'reportunlock',
     Key: file.name,
     Body: file,
     //ACL: 'public-read',
