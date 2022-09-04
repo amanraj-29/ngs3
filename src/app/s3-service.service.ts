@@ -12,11 +12,11 @@ export class S3ServiceService {
   constructor(private http: HttpClient) {
     this.bucket = new S3Client(
       {
-        credentials: {
-          accessKeyId: environment.AWS_ACCESS_KEY_ID,
-          secretAccessKey: environment.AWS_SECRET_ACCESS_KEY,
-          sessionToken:environment.AWS_SESSION_TOKEN
-        },
+       // credentials: {
+          //accessKeyId: environment.AWS_ACCESS_KEY_ID,
+          //secretAccessKey: environment.AWS_SECRET_ACCESS_KEY,
+          //sessionToken:environment.AWS_SESSION_TOKEN
+       // },
         region: environment.AWS_REGION,
       }
     );
@@ -28,7 +28,7 @@ async uploadFile(file: File) {
   const contentType = file.type;
 
   const params = {
-    Bucket: 'reportunlock',
+    Bucket: 'lcprtest',
     Key: file.name,
     Body: file,
     //ACL: 'public-read',
@@ -49,7 +49,7 @@ async uploadFileWithPreSignedURL(file: File) {
   const contentType = file.type;
 
   const params = {
-    Bucket: 'reportunlock',
+    Bucket: 'lcprtest',
     Key: file.name,
     Body: file,
     //ACL: 'public-read',
